@@ -12,7 +12,7 @@ on:
       amb:
         description: "Selecionar algum destes ambientes: dev / stg / hlg / prd"
         required: false
-        default: "stg"
+        default: "prd"
       browser:
         description: "Selecionar algum destes browsers: chrome / electron"
         required: true
@@ -20,13 +20,13 @@ on:
       tag:
         description: "Selecionar alguma tag, por exemplo: @regressivo / @smoke / @demo"
         required: false
-        default: "@demo"
+        default: ""
 
 env:
-  DEFAULT_KEY: "inserir-key-cypress-dashboard"
-  DEFAULT_AMB: "stg"
+  DEFAULT_KEY: ""
+  DEFAULT_AMB: "prd"
   DEFAULT_BROWSER: "chrome"
-  DEFAULT_TAG: "@demo"
+  DEFAULT_TAG: ""
   DEFAULT_GROUP: "CI"
 
 jobs:
@@ -36,9 +36,6 @@ jobs:
     container: cypress/browsers:node14.15.0-chrome96-ff94
     strategy:
       fail-fast: false
-      matrix:
-        # run copies of the current job in parallel
-        containers: [1, 2, 3, 4]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -49,7 +46,7 @@ jobs:
       - name: Cypress run tests
         uses: cypress-io/github-action@v4
         with:
-          command: npx cypress run --record --parallel --group ${{env.DEFAULT_GROUP}} --key ${{env.DEFAULT_KEY}} --browser ${{github.event.inputs.browser || env.DEFAULT_BROWSER}} --env version=${{github.event.inputs.amb || env.DEFAULT_AMB}} grepTags=${{github.event.inputs.tag || env.DEFAULT_TAG}}
+          command: npx cypress run --browser ${{github.event.inputs.browser || env.DEFAULT_BROWSER}} --env version=${{github.event.inputs.amb || env.DEFAULT_AMB}} grepTags=${{github.event.inputs.tag || env.DEFAULT_TAG}}
         env:
           CYPRESS_password: ${{ secrets.PASSWORD }}
 
