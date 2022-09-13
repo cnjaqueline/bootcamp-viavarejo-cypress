@@ -7,7 +7,7 @@
 	"scripts": {
 		"cy:test": "cypress run --config video=false --env",
 		"cy:open": "cypress open",
-		"cy:dash": "npx cypress run --record --key {secrets_dash}",
+		"cy:dash": "npx cypress run --record --key 7df7b9e7-1575-489f-8aa2-e7bc49c33670",
 		"allure:report": "allure generate --clean allure-results && allure open"
 	},
 	"keywords": [
@@ -22,5 +22,8 @@
 		"cypress-grep": "2.13.1",
 		"cypress-xpath": "1.6.2",
 		"faker-br": "^0.4.1"
+	},
+	"dependencies": {
+		"allure-commandline": "^2.18.1"
 	}
 }
