@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Sep 13 15:15:02 GMT 2022","Tue Sep 13 15:15:12 GMT 2022","9348","","Professional experience registration","","","","Delete a professional experience successfully",""
-"passed","Tue Sep 13 15:15:16 GMT 2022","Tue Sep 13 15:15:25 GMT 2022","9206","","Professional experience registration","","","","Delete current professional experience successfully",""
-"passed","Tue Sep 13 15:14:56 GMT 2022","Tue Sep 13 15:15:02 GMT 2022","5848","","Professional experience registration","","","","Add a professional experience successfully",""
-"passed","Tue Sep 13 15:15:12 GMT 2022","Tue Sep 13 15:15:16 GMT 2022","4439","","Professional experience registration","","","","Add current professional experience successfully",""
