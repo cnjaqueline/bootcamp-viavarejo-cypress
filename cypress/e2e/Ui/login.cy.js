@@ -24,7 +24,7 @@ describe('Login', () => {
         cy.get('[data-test="dashboard-welcome"]')
             .should('contain', 'Bem-vindo')
         cy.get('[data-test="dashboard-welcome"]')
-            .should('contain', 'Jaqueline Constantino')
+            .should('contain', 'Jaqueline')
     });
     it('Validate error message when entering invalid email and password using import', () => {
         cy.login(users[1].email, users[1].password)
@@ -38,7 +38,7 @@ describe('Login', () => {
             cy.get('[data-test="dashboard-welcome"]')
                 .should('contain', 'Bem-vindo')
             cy.get('[data-test="dashboard-welcome"]')
-                .should('contain', 'Jaqueline Constantino')
+                .should('contain', 'Jaqueline')
         })
     });
     it('Validate error message when entering invalid email and password using fixture', () => {
